@@ -29,18 +29,32 @@
 
       }
 
-      .hero__overlay {
-      	position: absolute;
-      	top: 50%;
-        transform: translateY(-50%);
-      	color: white;
-      	text-align: center;
-        width: 100%;
-      }
 
     	.hero__overlay h2 {
     		padding: 0 2em;
     	}
+
+
+      .hero__img img {
+		width: 100%;
+		}
+
+      .hero__overlay {
+      	position: absolute;
+      	bottom: 0.5em;
+      	color: white;
+      	text-align: center;
+      	width: 100%;
+      	background-color: rgba(1, 1, 1, 0.2);
+      }
+
+      body {
+        max-width: 768px;
+      }
+
+	.ui-li-has-thumb img {
+
+	}
 
     </style>
     <script id="panel-init">
@@ -212,13 +226,6 @@
 						</a>
 					</li>
 
-
-
-
-
-
-
-
 				</ul>
 
 
@@ -307,11 +314,12 @@
 
     <div role="main" class="ui-content">
 
-    	<div>
-    		<img src="/img/foofighters.jpg">
-			<h1>Foo fighters</h1>
-			<p>Week 9 value: &pound;4,250,000</p>
-			<br />
+    	<div class="hero">
+    		<div class="hero__img"><img src="/img/foofighters.jpg"></div>
+			<div class="hero__overlay">
+				<h2>Foo fighters</h2>
+				<p>Week 9 value: &pound;4,250,000</p>
+			</div>
     	</div>
 
     	<ul data-role="listview" class="ui-listview">
@@ -326,8 +334,6 @@
 			<li>Bristol, The Amex, 9th March</li>
 		</ul>
 
-
-
     </div><!-- /content -->
 
     <div data-role="footer" data-position="fixed">
@@ -335,7 +341,7 @@
 		    <ul>
 		        <li><a href="#" class="ui-btn ui-btn-inline ui-icon-audio ui-btn-icon-top">Listen</a></li>
 		        <li><a  href="#popupDialog" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Book</a></li>
-				<li><a  href="#watchDialog" class="ui-btn ui-btn-inline ui-icon-eye ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Book</a></li>		    </ul>
+				<li><a  href="#watchDialog" class="ui-btn ui-btn-inline ui-icon-eye ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Watch</a></li>		    </ul>
 		</div>
     </div><!-- /footer -->
 
