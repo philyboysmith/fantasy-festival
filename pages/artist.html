@@ -1,15 +1,55 @@
- <div data-role="page">
+ <div id="artist" data-role="page">
+
+    <div data-role="panel" id="menupanel" data-position="left" data-display="push" data-theme="a" class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-a ui-panel-animate ui-panel-open">
+    	<div class="ui-panel-inner">
+    		<a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+    	</div>
+    </div>
 
     <div data-role="header">
+
+		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
         <h1>Foo Fighters</h1>
+
+        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
     </div><!-- /header -->
 
     <div role="main" class="ui-content">
-        <p>Hello world</p>
+
+    	<div>
+    		<img src="/img/foofighters.jpg">
+			<h1>Foo fighters</h1>
+			<p>Week 9 value: &pound;4,250,000</p>
+    	</div>
+
+    	<ul data-role="listview" class="ui-listview">
+			<li class="ui-li-static ui-body-inherit ui-first-child">Twitter Followers: 5.4M</li>
+			<li class="ui-li-static ui-body-inherit ui-last-child">Spotify popularity: 87</li>
+		</ul>
+
+		<ul data-role="listview" class="ui-listview">
+			<li class="ui-li-static ui-body-inherit ui-first-child">Appearances</li>
+			<li class="ui-li-static ui-body-inherit">Oregon, The big stadium 5th March</li>
+			<li class="ui-li-static ui-body-inherit">California, The massive stadium 6th March</li>
+			<li class="ui-li-static ui-body-inherit">London, 02, 8th March</li>
+			<li class="ui-li-static ui-body-inherit ui-last-child">Bristol, The Amex, 9th March</li>
+		</ul>
+		
+		
+
     </div><!-- /content -->
 
     <div data-role="footer">
-        <h4>My Footer</h4>
+        <div data-role="navbar">
+		    <ul>
+		        <li><a href="#" class="ui-btn-active">Listen</a></li>
+		        <li><a href="#">Book</a></li>
+		        <li><a href="#">Watch</a></li>
+		        <li><a href="#">Cancel</a></li>
+		    </ul>
+		</div>
     </div><!-- /footer -->
 
 </div><!-- /page -->

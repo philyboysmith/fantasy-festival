@@ -1,11 +1,67 @@
- <div data-role="page">
+ <div id="artists" data-role="page">
 
+    <div data-role="panel" id="menupanel" data-position="left" data-display="push" data-theme="a" class="ui-panel ui-panel-position-left ui-panel-display-push ui-body-a ui-panel-animate ui-panel-open">
+    	<div class="ui-panel-inner">
+    		<a href="#demo-links" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left ui-btn-inline">Close panel</a>
+    	</div>
+    </div>
+    
     <div data-role="header">
-        <h1>Artists</h1>
+    	<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+    	
+    	<h1>Artists</h1>
+
+    	<a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
+        <div data-role="navbar">
+		    <ul>
+		        <li><a href="#" class="ui-btn-active">Listen</a></li>
+		        <li><a href="#">Book</a></li>
+		        <li><a href="#">Watch</a></li>
+		        <li><a href="#">Cancel</a></li>
+		    </ul>
+		</div>
     </div><!-- /header -->
 
     <div role="main" class="ui-content">
-        <p>Hello world</p>
+        <ul data-role="listview" data-inset="true">
+		    <li><a href="artist..html">
+		        <img src="/img/1975.jpeg">
+		    <h2>The 1975</h2>
+		    <p>+&pound;50M</p></a>
+		    </li>
+		    <li><a href="artist.html">
+		        <img src="/img/alesso.jpeg">
+		    <h2>Alesso</h2>
+		    <p>+&pound;100M</p></a>
+		    </li>
+		    <li><a href="artist.html">
+		        <img src="/img/allman-brown.jpg">
+		    <h2>Allman Brown</h2>
+		    <p>-&pound;13M</p></a>
+		    </li>
+		    <li><a href="artist.html">
+		        <img src="/img/amy-winehouse.jpeg">
+		    <h2>Amy Winehouse</h2>
+		    <p>+&pound;90M</p></a>
+		    </li>
+		    <li><a href="artist.html">
+		        <img src="/img/anais.jpg">
+		    <h2>Anais Mitchell and Jefferson</h2>
+		    <p>-&pound;3M</p></a>
+		    </li>
+		    <li><a href="artist.html">
+		        <img src="/img/ariana-grande.jpg">
+		    <h2>Ariana Grande</h2>
+		    <p>+&pound;12M</p></a>
+		    </li>
+		    <li><a href="artist.html">
+		        <img src="/img/becky-g.jpg">
+		    <h2>Becky G</h2>
+		    <p>-&pound;32M</p></a>
+		    </li>
+
+		</ul>
     </div><!-- /content -->
 
     <div data-role="footer">
@@ -13,3 +69,8 @@
     </div><!-- /footer -->
 
 </div><!-- /page -->
+
+
+
+
+
