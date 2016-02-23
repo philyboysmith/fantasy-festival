@@ -18,19 +18,21 @@
 
     <div role="main" class="ui-content">
 
-    	<div>
-    		<img src="/img/foofighters.jpg">
-			<h1>Foo fighters</h1>
-			<p>Week 9 value: &pound;4,250,000</p>
+    	<div class="hero">
+    		<div class="hero__img"><img src="/img/foofighters.jpg"></div>
+			<div class="hero__overlay">
+				<h2>Foo fighters</h2>
+				<p>Week 9 value: &pound;4,250,000</p>
+			</div>
     	</div>
 
-    	<ul data-role="listview" class="ui-listview">
+    	<ul data-role="listview" data-inset="true" class="ui-listview" >
 			<li class="ui-li-static ui-body-inherit ui-first-child">Twitter Followers: 5.4M</li>
 			<li class="ui-li-static ui-body-inherit ui-last-child">Spotify popularity: 87</li>
 		</ul>
 
-		<ul data-role="listview" class="ui-listview">
-			<li class="ui-li-static ui-body-inherit ui-first-child">Appearances</li>
+		<ul data-role="listview" data-inset="true" class="ui-listview">
+			<li class="ui-li-static ui-body-inherit ui-first-child" data-role="list-divider">Appearances</li>
 			<li class="ui-li-static ui-body-inherit">Oregon, The big stadium 5th March</li>
 			<li class="ui-li-static ui-body-inherit">California, The massive stadium 6th March</li>
 			<li class="ui-li-static ui-body-inherit">London, 02, 8th March</li>
