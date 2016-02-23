@@ -2,47 +2,62 @@
 <html>
 <head>
     <title>Fantasy Festival</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <style>
+    .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
+       text-shadow:0 0 0 !important;
+    }
       .hero {
-      	
+
       	width: 100%;
       	position: relative;
       }
 
       .hero__img {
       	overflow: hidden;
-      	
-      	
+
+
       }
 
       .hero__img img {
-		width: 100%;
-		
-		
+		    width: 100%;
+
+
       }
 
       .hero__overlay {
       	position: absolute;
-      	bottom: 0em;
+      	top: 50%;
+        transform: translateY(-50%);
       	color: white;
       	text-align: center;
+        width: 100%;
       }
 
-	.hero__overlay h2 {
-		padding: 0 2em;
-	}
-
+    	.hero__overlay h2 {
+    		padding: 0 2em;
+    	}
 
     </style>
+    <script id="panel-init">
+    $(function() {
+      $( "body>[data-role='panel']" ).panel();
+      $( "body>[data-role='panel'] [data-role='listview']" ).listview();
+
+    });
+  </script>
 </head>
 <body>
+
     <!-- @import "home.html" -->
     <!-- @import "festival.html" -->
     <!-- @import "artists.html" -->
     <!-- @import "artist.html" -->
+    <!-- @import "menu.html" -->
+
 </body>
 </html>
