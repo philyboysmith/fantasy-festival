@@ -4,9 +4,13 @@
     <title>Fantasy Festival</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+   <link rel="stylesheet" href="/bower_components/jqplot-bower/dist/jquery.jqplot.css">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="/bower_components/jqplot-bower/dist/jquery.jqplot.min.js"></script>
+    <script src="/bower_components/jqplot-bower/dist/plugins/jqplot.barRenderer.min.js"></script>
+    <script src="/bower_components/jqplot-bower/dist/plugins/jqplot.categoryAxisRenderer.js"></script>
     <style>
     .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
        text-shadow:0 0 0 !important;
@@ -55,6 +59,9 @@
 	.ui-li-has-thumb img {
 
 	}
+  .ui-table-columntoggle-btn {
+    display: none;
+  }
 
     </style>
     <script id="panel-init">
@@ -72,6 +79,8 @@
     <!-- @import "artists.html" -->
     <!-- @import "artist.html" -->
     <!-- @import "menu.html" -->
+    <!-- @import "artist-booked.html" -->
+    <!-- @import "performance.html" -->
 
 </body>
 </html>
