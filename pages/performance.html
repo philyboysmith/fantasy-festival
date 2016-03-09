@@ -1,0 +1,90 @@
+ <div data-role="page" id="performance">
+
+   <div data-role="header" data-position="fixed">
+
+		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
+		<h1>Performance</h1>
+
+        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+
+<table data-role="table" class="ui-responsive" data-priority="1" data-mode="columntoggle">
+  <thead>
+    <tr>
+      <th data-priority="1">Rank</th>
+      <th data-priority="1">Title</th>
+      <th data-priority="1">Change</th>
+      <th data-priority="1">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>1</th>
+      <td><a href="#" data-rel="external">My Glastonbury</a></td>
+      <td>+0.3M</td>
+      <td>$520M</td>
+    </tr>
+	<tr>
+      <th>2</th>
+      <td><a href="#" data-rel="external">Rock This</a></td>
+      <td>+0.6M</td>
+      <td>$510.6M</td>
+    </tr>
+	<tr>
+      <th>3</th>
+      <td><a href="#" data-rel="external">My Big Beach</a></td>
+      <td>-0.5M</td>
+      <td>$500.2M</td>
+    </tr>
+	<tr>
+		<td colspan="4"><hr /></td>
+	</tr>
+	<tr>
+      <th>1329</th>
+      <td><a href="#" data-rel="external">Your Chosen Festival</a></td>
+      <td>+0.4M</td>
+      <td>$200M</td>
+    </tr>
+   
+  </tbody>
+</table>
+<br />
+<h1>Performance</h1>
+
+<div id="chart1" style="margin-top:20px; margin-left:20px; width:100%; height:300px;"></div>
+
+<script>
+            $(document).on("pageshow", function() {
+$.jqplot.config.enablePlugins = true;
+        var s1 = [160, 192, 200, 220];
+        var ticks = ['nov', 'dec', 'jan', 'feb'];
+
+        plot1 = $.jqplot('chart1', [s1], {
+            // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+            animate: !$.jqplot.use_excanvas,
+            seriesDefaults:{
+                renderer:$.jqplot.BarRenderer,
+                pointLabels: { show: true }
+            },
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.CategoryAxisRenderer,
+                    ticks: ticks
+                }
+            },
+            highlighter: { show: false }
+        });
+
+
+});</script>
+
+
+
+    </div><!-- /content -->
+
+
+</div><!-- /page -->

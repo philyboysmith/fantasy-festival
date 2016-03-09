@@ -1,0 +1,65 @@
+ <div id="artist-booked" data-role="page">
+
+    <div data-role="header" data-position="fixed">
+
+		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
+        <h1>Foo Fighters</h1>
+
+        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+
+    	<div class="hero">
+    		<div class="hero__img"><img src="/img/foofighters.jpg"></div>
+			<div class="hero__overlay">
+				<h2>Foo fighters</h2>
+				<p>Week 9 value: &pound;4,250,000</p>
+			</div>
+    	</div>
+
+    	<ul data-role="listview" class="ui-listview">
+	    	<li data-role="list-divider">Rating</li>
+			<li>Twitter followers: 5.4M</li>
+			<li>Spotify popularity: 87</li>
+			<li >In app popularity: 45</li>
+			<li data-role="list-divider">Forthcoming Appearances</li>
+			<li>Oregon, The big stadium 5th March</li>
+			<li>California, The massive stadium 6th March</li>
+			<li>London, 02, 8th March</li>
+			<li>Bristol, The Amex, 9th March</li>
+		</ul>
+
+    </div><!-- /content -->
+
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+		    <ul>
+		        <li><a href="#" class="ui-btn ui-btn-inline ui-icon-audio ui-btn-icon-top">Listen</a></li>
+		        <li><a  href="#cancelDialog" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Cancel</a></li>
+		</div>
+    </div><!-- /footer -->
+
+    <div data-role="popup" id="cancelDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
+
+	    <div role="main" class="ui-content">
+	        <h3 class="ui-title">You are about to cancel the Foo Fighters.</h3>
+		    <p>Are you sure you want to proceed? This action cannot be undone.</p>
+	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Confirm</a>
+	    </div>
+	</div>
+
+	<div data-role="popup" id="watchDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
+
+	    <div role="main" class="ui-content">
+	        <h3 class="ui-title">We've added Foo Fighters to your shortlist.</h3>
+		    
+	        <a href="#" data-rel="back">Close</a>
+	        <a href="#festival" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" >See your shortlist</a>
+	    </div>
+	</div>
+
+</div><!-- /page -->
