@@ -24,6 +24,7 @@
       .hero__img {
       	overflow: hidden;
 
+
       }
 
       .hero__img img {
@@ -39,15 +40,30 @@
 
 
       .hero__img img {
-		width: 100%;
-		}
-
+  		width: 100%;
+      display: block;
+  		}
+      .avatar {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        border-radius: 100px;
+        overflow: hidden;
+      }
+      .avatar img {
+        width: 100%;
+      }
       .hero__overlay {
       	position: absolute;
-      	bottom: 0.5em;
+      	top: 0;
+        height: 100%;
       	color: white;
       	text-align: center;
       	width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       	background-color: rgba(1, 1, 1, 0.2);
       }
 
@@ -263,11 +279,7 @@
 
     <div role="main" class="ui-content">
         <ul data-role="listview" data-inset="true" data-autodividers="true">
-		    <li><a href="#artist">
-		        <img src="/img/1975.jpeg">
-		    <h2>The 1975</h2>
-		    <p>+&pound;50M</p></a>
-		    </li>
+
 		    <li><a href="#artist">
 		        <img src="/img/alesso.jpeg">
 		    <h2>Alesso</h2>
@@ -294,21 +306,22 @@
 		    <p>+&pound;12M</p></a>
 		    </li>
 		    <li><a href="#artist">
+		        <img src="/img/adele.jpg">
+		    <h2>Adele</h2>
+		    <p>&pound;320M</p></a>
+		    </li>
+		    <li><a href="#artist">
 		        <img src="/img/becky-g.jpg">
 		    <h2>Becky G</h2>
 		    <p>-&pound;32M</p></a>
 		    </li>
 
 
-			<li><a href="#artist">
-		        <img src="/img/muse.jpg">
-		    <h2>Muse</h2>
-		    <p>&pound;180M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/adele.jpg">
-		    <h2>Adele</h2>
-		    <p>&pound;320M</p></a>
+
+<li><a href="#artist">
+		        <img src="/img/chronixx.jpg">
+		    <h2>Chronixx</h2>
+		    <p>&pound;35M</p></a>
 		    </li>
 		    <li><a href="#artist">
 		        <img src="/img/coldplay.jpg">
@@ -316,44 +329,9 @@
 		    <p>&pound;6M</p></a>
 		    </li>
 		    <li><a href="#artist">
-		        <img src="/img/pj-harvey.jpg">
-		    <h2>PJ Harvey</h2>
-		    <p>&pound;18M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/jefflynne.jpg">
-		    <h2>Jeff Lynne's Elo</h2>
-		    <p>&pound;32M</p></a>
-		    </li>
-		    <li><a href="#artist">
 		        <img src="/img/florence.jpg">
 		    <h2>Florence and the Machine</h2>
 		    <p>&pound;19M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/james-bay.jpg">
-		    <h2>James Bay</h2>
-		    <p>&pound;12M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/chronixx.jpg">
-		    <h2>Chronixx</h2>
-		    <p>&pound;35M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/michael-clarke-company.jpg">
-		    <h2>Michael Clark Company</h2>
-		    <p>&pound;100M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/kanye.jpeg">
-		    <h2>Kanye West</h2>
-		    <p>&pound;0.1M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/pharrell.jpg">
-		    <h2>Pharell Williams</h2>
-		    <p>&pound;32M</p></a>
 		    </li>
 		    <li><a href="#artist">
 		        <img src="/img/george-ezra.jpg">
@@ -366,12 +344,60 @@
 		    <p>&pound;200M</p></a>
 		    </li>
 		    <li><a href="#artist">
+		        <img src="/img/james-bay.jpg">
+		    <h2>James Bay</h2>
+		    <p>&pound;12M</p></a>
+		    </li>
+		      <li><a href="#artist">
+		        <img src="/img/jefflynne.jpg">
+		    <h2>Jeff Lynne's Elo</h2>
+		    <p>&pound;32M</p></a>
+		    </li>
+		    <li><a href="#artist">
+		        <img src="/img/kanye.jpeg">
+		    <h2>Kanye West</h2>
+		    <p>&pound;0.1M</p></a>
+		    </li>
+		    <li><a href="#artist">
+		        <img src="/img/muse.jpg">
+		    <h2>Muse</h2>
+		    <p>&pound;180M</p></a>
+		    </li>
+		     <li><a href="#artist">
+		        <img src="/img/michael-clarke-company.jpg">
+		    <h2>Michael Clark Company</h2>
+		    <p>&pound;100M</p></a>
+		    </li>
+		    <li><a href="#artist">
+		        <img src="/img/pharrell.jpg">
+		    <h2>Pharell Williams</h2>
+		    <p>&pound;32M</p></a>
+		    </li>
+		    <li><a href="#artist">
+		        <img src="/img/pj-harvey.jpg">
+		    <h2>PJ Harvey</h2>
+		    <p>&pound;18M</p></a>
+		    </li>
+
+
+
+
+
+
+
+
+
+		    <li><a href="#artist">
 		        <img src="/img/rudimental.jpg">
 		    <h2>Rudimental</h2>
 		    <p>&pound;60M</p></a>
 		    </li>
 
-
+<li><a href="#artist">
+		        <img src="/img/1975.jpeg">
+		    <h2>The 1975</h2>
+		    <p>+&pound;50M</p></a>
+		    </li>
 		</ul>
     </div><!-- /content -->
 
@@ -603,6 +629,46 @@ $.jqplot.config.enablePlugins = true;
 
 
 });</script>
+
+
+
+    </div><!-- /content -->
+
+
+</div><!-- /page -->     <div data-role="page" id="budget">
+
+   <div data-role="header" data-position="fixed">
+
+
+		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
+		<h1>Budget</h1>
+
+        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+
+    </div><!-- /header -->
+
+    <div role="main" class="ui-content">
+
+    	<div class="hero">
+    		<div class="hero__img"><img src=/img/festival1.jpg></div>
+
+    		<div class="hero__overlay">
+    		<div class="avatar">
+    			<img src="http://presspage-production-content.s3.amazonaws.com/uploads/204/500_danielw.jpg"/>
+    		</div>
+    			<h2 style="margin: 0">Danload</h2>
+    			<p style="margin: 0">by Dan Walsh</p>
+    		</div>
+    	</div>
+
+    	<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+			<li>Total Budget <span class="ui-li-count ui-btn-up-c ui-btn-corner-all">300M</span></li>
+			<li>Budget Spent <span class="ui-li-count ui-btn-up-c ui-btn-corner-all">154.4M</span></li>
+			<li>Remaining Budget <span class="ui-li-count ui-btn-up-c ui-btn-corner-all">45.6M</span></li>
+		</ul>
+
+
 
 
 
