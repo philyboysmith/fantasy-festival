@@ -3,14 +3,26 @@
 <head>
     <title>Fantasy Festival</title>
     <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
    <link rel="stylesheet" href="/bower_components/jqplot-bower/dist/jquery.jqplot.css">
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="/bower_components/jqplot-bower/dist/jquery.jqplot.min.js"></script>
     <script src="/bower_components/jqplot-bower/dist/plugins/jqplot.barRenderer.min.js"></script>
     <script src="/bower_components/jqplot-bower/dist/plugins/jqplot.categoryAxisRenderer.js"></script>
+<script type="text/javascript" src="/bower_components/jqplot-bower/dist/plugins/jqplot.dateAxisRenderer.js"></script>
+<script type="text/javascript" src="/bower_components/jqplot-bower/dist/plugins/jqplot.barRenderer.js"></script>
+<script type="text/javascript" src="/bower_components/jqplot-bower/dist/plugins/jqplot.categoryAxisRenderer.js"></script>
+<script type="text/javascript" src="/bower_components/jqplot-bower/dist/plugins/jqplot.cursor.js"></script>
+<script type="text/javascript" src="/bower_components/jqplot-bower/dist/plugins/jqplot.highlighter.js"></script>
+<script type="text/javascript" src="/bower_components/jqplot-bower/dist/plugins/jqplot.dragable.js"></script>
+<script type="text/javascript" src="/bower_components/jqplot-bower/dist/plugins/jqplot.trendline.js"></script>
     <style>
     .ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {
        text-shadow:0 0 0 !important;
@@ -88,594 +100,617 @@
   </script>
 </head>
 <body>
-
-     <div data-role="page">
-
-    <div data-role="header">
-		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-		<h1>Home</h1>
-
-        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-
-		<ul data-role="listview" class="ui-listview">
-			<li class="ui-first-child">
-				<a href="#festival" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-					<h1>My Festival</h1><p>See your current lineup</p>
-				</a>
-			</li>
-			<li>
-				<a href="#artists" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-					<h1>Artists</h1><p>Find and book artists</p>
-				</a>
-			</li>
-			<li class="ui-last-child">
-				<a href="#performance" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-					<h1>Performance</h1><p>See how your festival lineup is performing</p>
-				</a>
-			</li>
-		</ul>
-		<br>
-		
-		<ul data-role="listview" data-count-theme="b" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
-					<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-a ui-first-child">Performance</li>
-					<li>Festival value<span class="ui-li-count ui-body-b">&pound;200M</span></li>
-					<li>Ranks<span class="ui-li-count ui-body-b">1329</span></a></li>
-					<li>Week 15 change <span class="ui-li-count ui-body-b">&pound;0.4M</span></li>
-					<li>Budget available <span class="ui-li-count ui-body-b">&pound;52M</span></li>
-					<li>Cancellations available <span class="ui-li-count ui-body-b">10</span></li>
-				</ul>
-
-
-
-
-    </div><!-- /content -->
-
-</div><!-- /page -->     <div data-role="page" id="festival">
-
-   <div data-role="header" data-position="fixed">
-
-
-		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-		<h1>Your Festival</h1>
-
-        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-
-    	<div class="hero">
-    		<div class="hero__img"><img src=/img/festival1.jpg></div>
-    		<div class="hero__overlay">
-    			<h2>Your Chosen Festival Name</h2>
-    			<p>Week #</p>
-    		</div>
-    	</div>
-
-    	<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-							<img src="/img/foofighters.jpg">
-							<h2>Foo Fighters</h2>
-							<p>Next concert: 17 October 2016</p>
-							<span class="ui-li-count">+&pound;0.2M</span>
-
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-							<img src="/img/kanye.jpeg">
-							<h2>Kanye West</h2>
-							<p>Next concert: 3 March 2016</p>
-							<span class="ui-li-count">-&pound;500M</span>
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/thewho.jpg">
-					<h2>The Who</h2>
-					<p>Next concert: 17 October 2016</p>
-					<span class="ui-li-count">+&pound;0.28M</span>
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/florence.jpg">
-						<h2>Florence and the Machine</h2>
-						<p>Next concert: 17 October 2016</p>
-						<span class="ui-li-count">+&pound;1.1M</span>
-							</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/pharrell.jpg">
-					<h2>Pharrell Williams</h2>
-					<p>Next concert: 17 October 2016</p>
-					<span class="ui-li-count">+&pound;5M</span>
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/paulweller.jpg">
-					<h2>Paul Weller</h2>
-					<p>Next concert: 17 October 2016</p>
-					<span class="ui-li-count">+&pound;0.6M</span>
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/palomafaith.jpg">
-					<h2>Paloma Faith</h2>
-					<p>Next concert: 17 October 2016</p>
-					<span class="ui-li-count">+&pound;0.11M</span>
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/alt-j.jpg">
-					<h2>Alt-J</h2>
-					<p>Next concert: 17 October 2016</p>
-					<span class="ui-li-count">+&pound;8.8M</span>
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/mary-j-blige.jpg">
-					<h2>Mary J Blige</h2>
-					<p>Next concert: 17 October 2016</p>
-					<span class="ui-li-count">+&pound;16.7M</span>
-						</a>
-					</li>
-
-					<li class="ui-li-has-thumb ui-first-child">
-						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
-						<img src="/img/alabama-shakes.jpg">
-					<h2>Alabama Shakes</h2>
-					<p>Next concert: 17 October 2016</p>
-					<span class="ui-li-count">+&pound;0.3M</span>
-						</a>
-					</li>
-
-				</ul>
-
-
-
-
-
-    </div><!-- /content -->
-
-
-</div><!-- /page -->     <div id="artists" data-role="page">
-
-    <div data-role="header" data-position="fixed">
-    	<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-    	<h1>Artists</h1>
-
-    	<a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-        <div data-role="navbar">
-		    <ul>
-		        <li><a href="#" class="ui-btn-active">Name</a></li>
-		        <li><a href="#">Search</a></li>
-		        <li><a href="#">Featured</a></li>
-		        <li><a href="#">Watching</a></li>
-		    </ul>
-		</div>
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-        <ul data-role="listview" data-inset="true" data-autodividers="true">
-
-		    <li><a href="#artist">
-		        <img src="/img/alesso.jpeg">
-		    <h2>Alesso</h2>
-		    <p>+&pound;100M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/allman-brown.jpg">
-		    <h2>Allman Brown</h2>
-		    <p>-&pound;13M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/amy-winehouse.jpeg">
-		    <h2>Amy Winehouse</h2>
-		    <p>+&pound;90M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/anais.jpg">
-		    <h2>Anais Mitchell and Jefferson</h2>
-		    <p>-&pound;3M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/ariana-grande.jpg">
-		    <h2>Ariana Grande</h2>
-		    <p>+&pound;12M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/adele.jpg">
-		    <h2>Adele</h2>
-		    <p>&pound;320M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/becky-g.jpg">
-		    <h2>Becky G</h2>
-		    <p>-&pound;32M</p></a>
-		    </li>
-
-
-
-<li><a href="#artist">
-		        <img src="/img/chronixx.jpg">
-		    <h2>Chronixx</h2>
-		    <p>&pound;35M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/coldplay.jpg">
-		    <h2>Coldplay</h2>
-		    <p>&pound;6M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/florence.jpg">
-		    <h2>Florence and the Machine</h2>
-		    <p>&pound;19M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/george-ezra.jpg">
-		    <h2>George Ezra</h2>
-		    <p>&pound;12M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/hozier.jpg">
-		    <h2>Hozier</h2>
-		    <p>&pound;200M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/james-bay.jpg">
-		    <h2>James Bay</h2>
-		    <p>&pound;12M</p></a>
-		    </li>
-		      <li><a href="#artist">
-		        <img src="/img/jefflynne.jpg">
-		    <h2>Jeff Lynne's Elo</h2>
-		    <p>&pound;32M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/kanye.jpeg">
-		    <h2>Kanye West</h2>
-		    <p>&pound;0.1M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/muse.jpg">
-		    <h2>Muse</h2>
-		    <p>&pound;180M</p></a>
-		    </li>
-		     <li><a href="#artist">
-		        <img src="/img/michael-clarke-company.jpg">
-		    <h2>Michael Clark Company</h2>
-		    <p>&pound;100M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/pharrell.jpg">
-		    <h2>Pharell Williams</h2>
-		    <p>&pound;32M</p></a>
-		    </li>
-		    <li><a href="#artist">
-		        <img src="/img/pj-harvey.jpg">
-		    <h2>PJ Harvey</h2>
-		    <p>&pound;18M</p></a>
-		    </li>
-
-
-
-
-
-
-
-
-
-		    <li><a href="#artist">
-		        <img src="/img/rudimental.jpg">
-		    <h2>Rudimental</h2>
-		    <p>&pound;60M</p></a>
-		    </li>
-
-<li><a href="#artist">
-		        <img src="/img/1975.jpeg">
-		    <h2>The 1975</h2>
-		    <p>+&pound;50M</p></a>
-		    </li>
-		</ul>
-    </div><!-- /content -->
-
-</div><!-- /page -->
-
-
-
-
-
+     <div data-role="page" id="login">
+    
+        <div data-role="header">
+    		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+    
+    		<h1>Login</h1>
+    
+            <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+    
+        </div><!-- /header -->
+    
+        <div role="main" class="ui-content">
+    
+        <h1>Login</h1>
+    
+        <form action="/#home" data-ajax="false">
+        
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" value="" placeholder="Username"/>
+        </div>
+    
+        <div data-role="fieldcontain" class="ui-hide-label">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" value="" placeholder="Password"/>
+        </div>
+    
+        <button type="submit" name="submit" value="submit-value" class="ui-btn-hidden" aria-disabled="false">Submit</button>
+    
+      </form>
+    
+        </div><!-- /content -->
+    
+    </div><!-- /page -->
+     <div data-role="page" id="home">
+        
+            <div data-role="header">
+        		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+        
+        		<h1>Home</h1>
+        
+                <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+        
+            </div><!-- /header -->
+        
+            <div role="main" class="ui-content">
+        
+        		<ul data-role="listview" class="ui-listview">
+        			<li class="ui-first-child">
+        				<a href="#festival" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+        					<h1>My Festival</h1><p>See your current lineup</p>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="#artists" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+        					<h1>Artists</h1><p>Find and book artists</p>
+        				</a>
+        			</li>
+        			<li class="ui-last-child">
+        				<a href="#performance" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+        					<h1>Performance</h1><p>See how your festival lineup is performing</p>
+        				</a>
+        			</li>
+        		</ul>
+        		<br>
+        		<ul data-role="listview" data-count-theme="b" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+        					<li data-role="list-divider" role="heading" class="ui-li-divider ui-bar-a ui-first-child">Performance</li>
+        					<li>Festival value<span class="ui-li-count ui-body-b">&pound;200M</span></li>
+        					<li>Ranks<span class="ui-li-count ui-body-b">1329</span></a></li>
+        					<li>Week 15 change <span class="ui-li-count ui-body-b">&pound;0.4M</span></li>
+        					<li>Budget available <span class="ui-li-count ui-body-b">&pound;52M</span></li>
+        					<li>Cancellations available <span class="ui-li-count ui-body-b">10</span></li>
+        				</ul>
+        
+        
+        
+        
+            </div><!-- /content -->
+        
+        </div><!-- /page -->
+     <div data-role="page" id="festival">
+            
+               <div data-role="header" data-position="fixed">
+            
+            		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+            
+            		<h1>Your Festival</h1>
+            
+                    <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+            
+                </div><!-- /header -->
+            
+                <div role="main" class="ui-content">
+            
+                	<div class="hero">
+                		<div class="hero__img"><img src=/img/festival1.jpg></div>
+                		<div class="hero__overlay">
+                			<h2>Your Chosen Festival Name</h2>
+                			<p>Week #</p>
+                		</div>
+                	</div>
+            
+                	<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            							<img src="/img/foofighters.jpg">
+            							<h2>Foo Fighters</h2>
+            							<p>Next concert: 17 October 2016</p>
+            							<span class="ui-li-count">+&pound;0.2M</span>
+            
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            							<img src="/img/kanye.jpeg">
+            							<h2>Kanye West</h2>
+            							<p>Next concert: 3 March 2016</p>
+            							<span class="ui-li-count">-&pound;500M</span>
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/thewho.jpg">
+            					<h2>The Who</h2>
+            					<p>Next concert: 17 October 2016</p>
+            					<span class="ui-li-count">+&pound;0.28M</span>
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/florence.jpg">
+            						<h2>Florence and the Machine</h2>
+            						<p>Next concert: 17 October 2016</p>
+            						<span class="ui-li-count">+&pound;1.1M</span>
+            							</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/pharrell.jpg">
+            					<h2>Pharrell Williams</h2>
+            					<p>Next concert: 17 October 2016</p>
+            					<span class="ui-li-count">+&pound;5M</span>
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/paulweller.jpg">
+            					<h2>Paul Weller</h2>
+            					<p>Next concert: 17 October 2016</p>
+            					<span class="ui-li-count">+&pound;0.6M</span>
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/palomafaith.jpg">
+            					<h2>Paloma Faith</h2>
+            					<p>Next concert: 17 October 2016</p>
+            					<span class="ui-li-count">+&pound;0.11M</span>
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/alt-j.jpg">
+            					<h2>Alt-J</h2>
+            					<p>Next concert: 17 October 2016</p>
+            					<span class="ui-li-count">+&pound;8.8M</span>
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/mary-j-blige.jpg">
+            					<h2>Mary J Blige</h2>
+            					<p>Next concert: 17 October 2016</p>
+            					<span class="ui-li-count">+&pound;16.7M</span>
+            						</a>
+            					</li>
+            
+            					<li class="ui-li-has-thumb ui-first-child">
+            						<a href="#artist-booked" class="ui-btn ui-btn-icon-right ui-icon-carat-r">
+            						<img src="/img/alabama-shakes.jpg">
+            					<h2>Alabama Shakes</h2>
+            					<p>Next concert: 17 October 2016</p>
+            					<span class="ui-li-count">+&pound;0.3M</span>
+            						</a>
+            					</li>
+            
+            				</ul>
+            
+            
+            
+            
+            
+                </div><!-- /content -->
+            
+            
+            </div><!-- /page -->
+     <div id="artists" data-role="page">
+                
+                    <div data-role="header" data-position="fixed">
+                    	<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                
+                    	<h1>Artists</h1>
+                
+                    	<a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                
+                        <div data-role="navbar">
+                		    <ul>
+                		        <li><a href="#" class="ui-btn-active">Name</a></li>
+                		        <li><a href="#">Search</a></li>
+                		        <li><a href="#">Featured</a></li>
+                		        <li><a href="#">Watching</a></li>
+                		    </ul>
+                		</div>
+                    </div><!-- /header -->
+                
+                    <div role="main" class="ui-content">
+                        <ul data-role="listview" data-inset="true" data-autodividers="true">
+                
+                		    <li><a href="#artist">
+                		        <img src="/img/alesso.jpeg">
+                		    <h2>Alesso</h2>
+                		    <p>+&pound;100M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/allman-brown.jpg">
+                		    <h2>Allman Brown</h2>
+                		    <p>-&pound;13M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/amy-winehouse.jpeg">
+                		    <h2>Amy Winehouse</h2>
+                		    <p>+&pound;90M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/anais.jpg">
+                		    <h2>Anais Mitchell and Jefferson</h2>
+                		    <p>-&pound;3M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/ariana-grande.jpg">
+                		    <h2>Ariana Grande</h2>
+                		    <p>+&pound;12M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/adele.jpg">
+                		    <h2>Adele</h2>
+                		    <p>&pound;320M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/becky-g.jpg">
+                		    <h2>Becky G</h2>
+                		    <p>-&pound;32M</p></a>
+                		    </li>
+                
+                
+                
+                <li><a href="#artist">
+                		        <img src="/img/chronixx.jpg">
+                		    <h2>Chronixx</h2>
+                		    <p>&pound;35M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/coldplay.jpg">
+                		    <h2>Coldplay</h2>
+                		    <p>&pound;6M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/florence.jpg">
+                		    <h2>Florence and the Machine</h2>
+                		    <p>&pound;19M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/george-ezra.jpg">
+                		    <h2>George Ezra</h2>
+                		    <p>&pound;12M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/hozier.jpg">
+                		    <h2>Hozier</h2>
+                		    <p>&pound;200M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/james-bay.jpg">
+                		    <h2>James Bay</h2>
+                		    <p>&pound;12M</p></a>
+                		    </li>
+                		      <li><a href="#artist">
+                		        <img src="/img/jefflynne.jpg">
+                		    <h2>Jeff Lynne's Elo</h2>
+                		    <p>&pound;32M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/kanye.jpeg">
+                		    <h2>Kanye West</h2>
+                		    <p>&pound;0.1M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/muse.jpg">
+                		    <h2>Muse</h2>
+                		    <p>&pound;180M</p></a>
+                		    </li>
+                		     <li><a href="#artist">
+                		        <img src="/img/michael-clarke-company.jpg">
+                		    <h2>Michael Clark Company</h2>
+                		    <p>&pound;100M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/pharrell.jpg">
+                		    <h2>Pharell Williams</h2>
+                		    <p>&pound;32M</p></a>
+                		    </li>
+                		    <li><a href="#artist">
+                		        <img src="/img/pj-harvey.jpg">
+                		    <h2>PJ Harvey</h2>
+                		    <p>&pound;18M</p></a>
+                		    </li>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                		    <li><a href="#artist">
+                		        <img src="/img/rudimental.jpg">
+                		    <h2>Rudimental</h2>
+                		    <p>&pound;60M</p></a>
+                		    </li>
+                
+                <li><a href="#artist">
+                		        <img src="/img/1975.jpeg">
+                		    <h2>The 1975</h2>
+                		    <p>+&pound;50M</p></a>
+                		    </li>
+                		</ul>
+                    </div><!-- /content -->
+                
+                </div><!-- /page -->
+                
+                
+                
+                
+                
+                
      <div id="artist" data-role="page">
+                    
+                        <div data-role="header" data-position="fixed">
+                    
+                    		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                    
+                            <h1>Foo Fighters</h1>
+                    
+                            <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                    
+                        </div><!-- /header -->
+                    
+                        <div role="main" class="ui-content">
+                    
+                        	<div class="hero">
+                        		<div class="hero__img"><img src="/img/foofighters.jpg"></div>
+                    			<div class="hero__overlay">
+                    				<h2>Foo fighters</h2>
+                    				<p>Week 9 value: &pound;4,250,000</p>
+                    			</div>
+                        	</div>
+                    
+                        	<ul data-role="listview" class="ui-listview">
+                    	    	<li data-role="list-divider">Rating</li>
+                    			<li>Twitter followers: 5.4M</li>
+                    			<li>Spotify popularity: 87</li>
+                    			<li >In app popularity: 45</li>
+                    			<li data-role="list-divider">Forthcoming Appearances</li>
+                    			<li>Oregon, The big stadium 5th March</li>
+                    			<li>California, The massive stadium 6th March</li>
+                    			<li>London, 02, 8th March</li>
+                    			<li>Bristol, The Amex, 9th March</li>
+                    		</ul>
+                    
+                        </div><!-- /content -->
+                    
+                        <div data-role="footer" data-position="fixed">
+                            <div data-role="navbar">
+                    		    <ul>
+                    		        <li><a href="#" class="ui-btn ui-btn-inline ui-icon-audio ui-btn-icon-top">Listen</a></li>
+                    		        <li><a  href="#popupDialog" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Book</a></li>
+                    				<li><a  href="#watchDialog" class="ui-btn ui-btn-inline ui-icon-eye ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Watch</a></li>		    </ul>
+                    		</div>
+                        </div><!-- /footer -->
+                    
+                        <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
+                    
+                    	    <div role="main" class="ui-content">
+                    	        <h3 class="ui-title">You are about to book the Foo Fighters.</h3>
+                    		    <p>This will use £4,250,00 of your budget. Are you sure you want to proceed? This action cannot be undone.</p>
+                    	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+                    	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Confirm</a>
+                    	    </div>
+                    	</div>
+                    
+                    	<div data-role="popup" id="watchDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
+                    
+                    	    <div role="main" class="ui-content">
+                    	        <h3 class="ui-title">We've added Foo Fighters to your shortlist.</h3>
+                    		    
+                    	        <a href="#" data-rel="back">Close</a>
+                    	        <a href="#festival" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" >See your shortlist</a>
+                    	    </div>
+                    	</div>
+                    
+                    </div><!-- /page -->
+    <div data-role="panel" id="menupanel" data-position="left" data-position-fixed="true"  data-display="reveal" data-theme="b" >
+                            <div class="ui-panel-inner">
+                            <ul data-role="listview">
+                        		<li><a href="/#home">Home</a></li>
+                        		<li><a href="/#festival">My Festival</a></li>
+                        		<li><a href="/#artists">Artists</a></li>
+                        		<li><a href="/#performance">Performance</a></li>
+                        		<li><a href="/">Logout</a></li>
+                            </ul>
+                        	</div>
+                        </div>
+     <div id="artist-booked" data-role="page">
+                            
+                                <div data-role="header" data-position="fixed">
+                            
+                            		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                            
+                                    <h1>Foo Fighters</h1>
+                            
+                                    <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                            
+                                </div><!-- /header -->
+                            
+                                <div role="main" class="ui-content">
+                            
+                                	<div class="hero">
+                                		<div class="hero__img"><img src="/img/foofighters.jpg"></div>
+                            			<div class="hero__overlay">
+                            				<h2>Foo fighters</h2>
+                            				<p>Week 9 value: &pound;4,250,000</p>
+                            			</div>
+                                	</div>
+                            
+                                	<ul data-role="listview" class="ui-listview">
+                            	    	<li data-role="list-divider">Rating</li>
+                            			<li>Twitter followers: 5.4M</li>
+                            			<li>Spotify popularity: 87</li>
+                            			<li >In app popularity: 45</li>
+                            			<li data-role="list-divider">Forthcoming Appearances</li>
+                            			<li>Oregon, The big stadium 5th March</li>
+                            			<li>California, The massive stadium 6th March</li>
+                            			<li>London, 02, 8th March</li>
+                            			<li>Bristol, The Amex, 9th March</li>
+                            		</ul>
+                            
+                                </div><!-- /content -->
+                            
+                                <div data-role="footer" data-position="fixed">
+                                    <div data-role="navbar">
+                            		    <ul>
+                            		        <li><a href="#" class="ui-btn ui-btn-inline ui-icon-audio ui-btn-icon-top">Listen</a></li>
+                            		        <li><a  href="#cancelDialog" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Cancel</a></li>
+                            		</div>
+                                </div><!-- /footer -->
+                            
+                                <div data-role="popup" id="cancelDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
+                            
+                            	    <div role="main" class="ui-content">
+                            	        <h3 class="ui-title">You are about to cancel the Foo Fighters.</h3>
+                            		    <p>Are you sure you want to proceed? This action cannot be undone.</p>
+                            	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
+                            	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Confirm</a>
+                            	    </div>
+                            	</div>
+                            
+                            	<div data-role="popup" id="watchDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
+                            
+                            	    <div role="main" class="ui-content">
+                            	        <h3 class="ui-title">We've added Foo Fighters to your shortlist.</h3>
+                            		    
+                            	        <a href="#" data-rel="back">Close</a>
+                            	        <a href="#festival" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" >See your shortlist</a>
+                            	    </div>
+                            	</div>
+                            
+                            </div><!-- /page -->
+    
+                                <div data-role="page" id="performance">
+                                
+                                   <div data-role="header" data-position="fixed">
+                                
+                                		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                                
+                                		<h1>Performance</h1>
+                                
+                                        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
+                                
+                                    </div><!-- /header -->
+                                
+                                    <div role="main" class="ui-content">
+                                
+                                <table data-role="table" class="ui-responsive" data-priority="1" data-mode="columntoggle">
+                                  <thead>
+                                    <tr>
+                                      <th data-priority="1">Rank</th>
+                                      <th data-priority="1">Title</th>
+                                      <th data-priority="1">Change</th>
+                                      <th data-priority="1">Total</th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr>
+                                      <th>1</th>
+                                      <td><a href="#" data-rel="external">My Glastonbury</a></td>
+                                      <td>+0.3M</td>
+                                      <td>$520M</td>
+                                    </tr>
+                                	<tr>
+                                      <th>2</th>
+                                      <td><a href="#" data-rel="external">Rock This</a></td>
+                                      <td>+0.6M</td>
+                                      <td>$510.6M</td>
+                                    </tr>
+                                	<tr>
+                                      <th>3</th>
+                                      <td><a href="#" data-rel="external">My Big Beach</a></td>
+                                      <td>-0.5M</td>
+                                      <td>$500.2M</td>
+                                    </tr>
+                                	<tr>
+                                		<td colspan="4"><hr /></td>
+                                	</tr>
+                                	<tr>
+                                      <th>1329</th>
+                                      <td><a href="#" data-rel="external">Your Chosen Festival</a></td>
+                                      <td>+0.4M</td>
+                                      <td>$200M</td>
+                                    </tr>
+                                   
+                                  </tbody>
+                                </table>
+                                <br />
+                                <h1>Performance</h1>
+                                
+                                <div id="chart1" style="margin-top:20px; margin-left:20px; width:100%; height:300px;"></div>
+                                
+                                <script>
+                                            $(document).on("pageshow", function() {
+                                $.jqplot.config.enablePlugins = true;
+                                        var s1 = [['23-Mar-18', 200],
+                                        ['24-Mar-18', 186.00],
+                                        ['25-Mar-18', 156.24],
+                                        ['26-Mar-18', 148.43],
+                                        ['27-Mar-18', 123.20],
+                                        ['28-Mar-18', 133.05],
+                                        ['29-Mar-18', 122.41],
+                                        ['30-Mar-18', 128.53],
+                                        ['31-Mar-18', 127.24],
+                                        ['1-Apr-18', 152.69],
+                                        ['2-Apr-18', 166.43],
+                                        ['3-Apr-18', 146.46],
+                                        ['4-Apr-18', 152.32],
+                                        ['5-Apr-18', 152.32],
+                                        ['6-Apr-18', 130.99],
+                                        ['7-Apr-18', 121.82],
+                                        ['8-Apr-18', 116.95],
+                                        ['9-Apr-18', 111.10],
+                                        ['10-Apr-18', 133.32]];
+                                
+                                        plot1 = $.jqplot('chart1', [s1], {
+                                            // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+                                            animate: !$.jqplot.use_excanvas,
+                                            
+                                            axes: {
+                                                xaxis: {
+                                                    renderer: $.jqplot.DateAxisRenderer,
+                                                    tickOptions: {
+                                                        formatString: '%#d/%#m/%y'
+                                                    },
+                                                    numberTicks: 10
+                                                },
+                                                yaxis: {
+                                                    tickOptions: {
+                                                        formatString: '$%.2fm'
+                                                    }
+                                                }
+                                            },
+                                            cursor: {
+                                                show: true
+                                            }
+                                        });
+                                
+                                
+                                });</script>
+                                
+                                
+                                
+                                    </div><!-- /content -->
+                                
+                                
+                                </div><!-- /page -->
 
-    <div data-role="header" data-position="fixed">
-
-		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-        <h1>Foo Fighters</h1>
-
-        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-
-    	<div class="hero">
-    		<div class="hero__img"><img src="/img/foofighters.jpg"></div>
-			<div class="hero__overlay">
-				<h2>Foo fighters</h2>
-				<p>Week 9 value: &pound;4,250,000</p>
-			</div>
-    	</div>
-
-    	<ul data-role="listview" class="ui-listview">
-	    	<li data-role="list-divider">Rating</li>
-			<li>Twitter followers: 5.4M</li>
-			<li>Spotify popularity: 87</li>
-			<li >In app popularity: 45</li>
-			<li data-role="list-divider">Forthcoming Appearances</li>
-			<li>Oregon, The big stadium 5th March</li>
-			<li>California, The massive stadium 6th March</li>
-			<li>London, 02, 8th March</li>
-			<li>Bristol, The Amex, 9th March</li>
-		</ul>
-
-    </div><!-- /content -->
-
-    <div data-role="footer" data-position="fixed">
-        <div data-role="navbar">
-		    <ul>
-		        <li><a href="#" class="ui-btn ui-btn-inline ui-icon-audio ui-btn-icon-top">Listen</a></li>
-		        <li><a  href="#popupDialog" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Book</a></li>
-				<li><a  href="#watchDialog" class="ui-btn ui-btn-inline ui-icon-eye ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Watch</a></li>		    </ul>
-		</div>
-    </div><!-- /footer -->
-
-    <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
-
-	    <div role="main" class="ui-content">
-	        <h3 class="ui-title">You are about to book the Foo Fighters.</h3>
-		    <p>This will use £4,250,00 of your budget. Are you sure you want to proceed? This action cannot be undone.</p>
-	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
-	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Confirm</a>
-	    </div>
-	</div>
-
-	<div data-role="popup" id="watchDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
-
-	    <div role="main" class="ui-content">
-	        <h3 class="ui-title">We've added Foo Fighters to your shortlist.</h3>
-		    
-	        <a href="#" data-rel="back">Close</a>
-	        <a href="#festival" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" >See your shortlist</a>
-	    </div>
-	</div>
-
-</div><!-- /page -->    <div data-role="panel" id="menupanel" data-position="left" data-position-fixed="true"  data-display="reveal" data-theme="b" >
-    <div class="ui-panel-inner">
-    <ul data-role="listview">
-		<li><a href="/">Home</a></li>
-		<li><a href="/#festival">My Festival</a></li>
-		<li><a href="/#artists">Artists</a></li>
-		<li><a href="/#performance">Performance</a></li>
-		<li><a href="#">Logout</a></li>
-    </ul>
-	</div>
-</div>     <div id="artist-booked" data-role="page">
-
-    <div data-role="header" data-position="fixed">
-
-		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-        <h1>Foo Fighters</h1>
-
-        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-
-    	<div class="hero">
-    		<div class="hero__img"><img src="/img/foofighters.jpg"></div>
-			<div class="hero__overlay">
-				<h2>Foo fighters</h2>
-				<p>Week 9 value: &pound;4,250,000</p>
-			</div>
-    	</div>
-
-    	<ul data-role="listview" class="ui-listview">
-	    	<li data-role="list-divider">Rating</li>
-			<li>Twitter followers: 5.4M</li>
-			<li>Spotify popularity: 87</li>
-			<li >In app popularity: 45</li>
-			<li data-role="list-divider">Forthcoming Appearances</li>
-			<li>Oregon, The big stadium 5th March</li>
-			<li>California, The massive stadium 6th March</li>
-			<li>London, 02, 8th March</li>
-			<li>Bristol, The Amex, 9th March</li>
-		</ul>
-
-    </div><!-- /content -->
-
-    <div data-role="footer" data-position="fixed">
-        <div data-role="navbar">
-		    <ul>
-		        <li><a href="#" class="ui-btn ui-btn-inline ui-icon-audio ui-btn-icon-top">Listen</a></li>
-		        <li><a  href="#cancelDialog" class="ui-btn ui-btn-inline ui-icon-check ui-btn-icon-top" data-rel="popup" data-position-to="window" data-transition="pop">Cancel</a></li>
-		</div>
-    </div><!-- /footer -->
-
-    <div data-role="popup" id="cancelDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
-
-	    <div role="main" class="ui-content">
-	        <h3 class="ui-title">You are about to cancel the Foo Fighters.</h3>
-		    <p>Are you sure you want to proceed? This action cannot be undone.</p>
-	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">Cancel</a>
-	        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">Confirm</a>
-	    </div>
-	</div>
-
-	<div data-role="popup" id="watchDialog" data-overlay-theme="a" data-theme="a" data-dismissible="false" style="max-width:400px;">
-
-	    <div role="main" class="ui-content">
-	        <h3 class="ui-title">We've added Foo Fighters to your shortlist.</h3>
-		    
-	        <a href="#" data-rel="back">Close</a>
-	        <a href="#festival" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" >See your shortlist</a>
-	    </div>
-	</div>
-
-</div><!-- /page -->     <div data-role="page" id="performance">
-
-   <div data-role="header" data-position="fixed">
-
-		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-		<h1>Performance</h1>
-
-        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-
-<table data-role="table" class="ui-responsive" data-priority="1" data-mode="columntoggle">
-  <thead>
-    <tr>
-      <th data-priority="1">Rank</th>
-      <th data-priority="1">Title</th>
-      <th data-priority="1">Change</th>
-      <th data-priority="1">Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>1</th>
-      <td><a href="#" data-rel="external">My Glastonbury</a></td>
-      <td>+0.3M</td>
-      <td>$520M</td>
-    </tr>
-	<tr>
-      <th>2</th>
-      <td><a href="#" data-rel="external">Rock This</a></td>
-      <td>+0.6M</td>
-      <td>$510.6M</td>
-    </tr>
-	<tr>
-      <th>3</th>
-      <td><a href="#" data-rel="external">My Big Beach</a></td>
-      <td>-0.5M</td>
-      <td>$500.2M</td>
-    </tr>
-	<tr>
-		<td colspan="4"><hr /></td>
-	</tr>
-	<tr>
-      <th>1329</th>
-      <td><a href="#" data-rel="external">Your Chosen Festival</a></td>
-      <td>+0.4M</td>
-      <td>$200M</td>
-    </tr>
-   
-  </tbody>
-</table>
-<br />
-<h1>Performance</h1>
-
-<div id="chart1" style="margin-top:20px; margin-left:20px; width:100%; height:300px;"></div>
-
-<script>
-            $(document).on("pageshow", function() {
-$.jqplot.config.enablePlugins = true;
-        var s1 = [160, 192, 200, 220];
-        var ticks = ['nov', 'dec', 'jan', 'feb'];
-
-        plot1 = $.jqplot('chart1', [s1], {
-            // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
-            animate: !$.jqplot.use_excanvas,
-            seriesDefaults:{
-                renderer:$.jqplot.BarRenderer,
-                pointLabels: { show: true }
-            },
-            axes: {
-                xaxis: {
-                    renderer: $.jqplot.CategoryAxisRenderer,
-                    ticks: ticks
-                }
-            },
-            highlighter: { show: false }
-        });
-
-
-});</script>
-
-
-
-    </div><!-- /content -->
-
-
-</div><!-- /page -->     <div data-role="page" id="budget">
-
-   <div data-role="header" data-position="fixed">
-
-
-		<a href="#menupanel" class="ui-btn ui-icon-bars ui-btn-icon-left ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-		<h1>Budget</h1>
-
-        <a href="#user" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow ui-corner-all ui-btn-inline ui-btn-mini ui-btn-icon-notext">Reveal</a>
-
-    </div><!-- /header -->
-
-    <div role="main" class="ui-content">
-
-    	<div class="hero">
-    		<div class="hero__img"><img src=/img/festival1.jpg></div>
-
-    		<div class="hero__overlay">
-    		<div class="avatar">
-    			<img src="http://presspage-production-content.s3.amazonaws.com/uploads/204/500_danielw.jpg"/>
-    		</div>
-    			<h2 style="margin: 0">Danload</h2>
-    			<p style="margin: 0">by Dan Walsh</p>
-    		</div>
-    	</div>
-
-    	<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
-			<li>Total Budget <span class="ui-li-count ui-btn-up-c ui-btn-corner-all">300M</span></li>
-			<li>Budget Spent <span class="ui-li-count ui-btn-up-c ui-btn-corner-all">154.4M</span></li>
-			<li>Remaining Budget <span class="ui-li-count ui-btn-up-c ui-btn-corner-all">45.6M</span></li>
-		</ul>
-
-
-
-
-
-    </div><!-- /content -->
-
-
-</div><!-- /page -->
 </body>
 </html>
