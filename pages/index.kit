@@ -102,14 +102,105 @@
   </script>
 </head>
 <body>
+    <!-- @import "artists.html" -->
     <!-- @import "login.html" -->
     <!-- @import "home.html" -->
     <!-- @import "festival.html" -->
-    <!-- @import "artists.html" -->
     <!-- @import "artist.html" -->
     <!-- @import "menu.html" -->
     <!-- @import "artist-booked.html" -->
     <!-- @import "performance.html" -->
 
+<script>
+  function artistLink(value){
+    $.mobile.pageContainer.pagecontainer("change", "#artist", {
+        stuff: value,
+        transition: "flip"
+    });
+  }
+
+  $(document).on("pagebeforechange", function (e, data) {
+    if (data.toPage[0].id == "artist") {
+
+        $.getJSON("http://www.fantasyfestival.com/artistsBeta/" + 2, function(data) {
+          $('.artistName').html(data.data.name);
+          $('.artistBiog').html(data.data.biog);
+          $('.artistPopularity').html(data.data.id);
+          $('.artistTwitter').html(parseInt(data.data.twitter_followers).toLocaleString());
+
+          $('.artistSpotify').html(parseInt(data.data.spotify_followers).toLocaleString());
+          $('.artistImg').attr('src', data.data.large_image);
+          $('.artistValue').html(parseInt(data.data.value).toLocaleString());
+
+          $.jqplot.config.enablePlugins = true;
+          var val = parseInt(data.data.latest_value);
+        var s1 = [['2-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['3-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['4-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['5-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['6-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['7-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['8-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['9-Apr-18', (Math.random() * 10 + 90) / 100 * val],
+        ['10-Apr-18', val]];
+
+
+        plot1 = $.jqplot('chart1', [s1], {
+            
+            animate: !$.jqplot.use_excanvas,
+            
+            axes: {
+                xaxis: {
+                    renderer: $.jqplot.DateAxisRenderer,
+                    tickOptions: {
+                        formatString: '%#d/%#m/%y'
+                    },
+                    numberTicks: 4
+                },
+                yaxis: {
+                    tickOptions: {
+                        formatString: '$%'
+                    },
+                    numberTicks: 4
+
+                }
+            },
+            cursor: {
+                show: true
+            }
+        });
+        })
+
+        
+    }
+});
+
+
+  $(document).on("pageinit", "#artists", function(){
+
+  
+
+        $.getJSON("http://www.fantasyfestival.com/artistsBeta", function(data){
+            var output = '';
+            $.each(data['data'], function(index, value){
+              if(value.sort_name) {
+                output += '<li data-sort="' + value.sort_name.slice(0,1).toUpperCase() +'"><a onclick="artistLink('+value.id +')" href="#" id=""><img src="' + value.small_image +'"><h2>' + value.name +'</h2><p>&pound;' + parseInt(value.value).toLocaleString() +'</p></a></li>';
+
+              }
+            });
+            $('#artistsList').append(output).listview({
+              autodividers:true,
+              autodividersSelector: function ( li ) {
+                  var out = li.data("sort");
+                  return out;
+              }
+          })
+          .listview("refresh");
+
+        });
+
+        
+    });
+    </script>
 </body>
 </html>
