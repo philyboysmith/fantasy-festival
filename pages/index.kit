@@ -122,7 +122,7 @@
   $(document).on("pagebeforechange", function (e, data) {
     if (data.toPage[0].id == "artist") {
 
-        $.getJSON("http://www.fantasyfestival.com/artistsBeta/" + 2, function(data) {
+        $.getJSON("http://www.fantasyfestival.com/artistsBeta/" + data.options.stuff, function(data) {
           $('.artistName').html(data.data.name);
           $('.artistBiog').html(data.data.biog);
           $('.artistPopularity').html(data.data.id);
