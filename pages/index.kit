@@ -131,9 +131,10 @@
           $('.artistSpotify').html(parseInt(data.data.spotify_followers).toLocaleString());
           $('.artistImg').attr('src', data.data.large_image);
           $('.artistValue').html(parseInt(data.data.value).toLocaleString());
+          console.log('here');
 
           $.jqplot.config.enablePlugins = true;
-          var val = parseInt(data.data.latest_value);
+          var val = parseInt(data.data.value) / 1000000;
         var s1 = [['2-Apr-18', (Math.random() * 10 + 90) / 100 * val],
         ['3-Apr-18', (Math.random() * 10 + 90) / 100 * val],
         ['4-Apr-18', (Math.random() * 10 + 90) / 100 * val],
@@ -144,8 +145,7 @@
         ['9-Apr-18', (Math.random() * 10 + 90) / 100 * val],
         ['10-Apr-18', val]];
 
-
-        plot1 = $.jqplot('chart1', [s1], {
+        plot2 = $.jqplot('chart2', [s1], {
             
             animate: !$.jqplot.use_excanvas,
             
@@ -159,7 +159,7 @@
                 },
                 yaxis: {
                     tickOptions: {
-                        formatString: '$%'
+                        formatString: '$%.2fm'
                     },
                     numberTicks: 4
 
@@ -169,6 +169,12 @@
                 show: true
             }
         });
+        $(window).resize(function() {
+          plot2.replot( {resetAxes: true } );
+      });
+
+      console.log(val);
+
         })
 
         
